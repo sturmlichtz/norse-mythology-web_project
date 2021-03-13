@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>Books</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+              font-family: Montserrat, sans-serif;
+            color: #777;
+        }
+        .navbar {
+              font-family: Montserrat, sans-serif;
+              margin-bottom: 0;
+              background-color: #000;
+              border: 0;
+              font-size: 11px !important;
+              letter-spacing: 4px;
+              opacity: 0.9;
+               }
+          .thumbnail {
+                padding: 0px;
+             border: none;
+               border-radius: 0;
+        }
+          .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+.thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+                    .container {
+             padding: 80px 120px;
+                    }
+
+#map{
+    text-align: center;
+      width:100%;
+      margin-bottom: 10px;
+}
+
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;      
+      font-size: 20px;
+      color: #111;
+  }
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+    /* make all photos black and white */ 
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  #bookscarousel-inner img {
+      width:250px;
+      height:350px;-webkit-filter: grayscale(90%);
+
+      margin: 9%;
+
+    }
+    #myCarouselforbooks{
+      background-color:black;
+    }
+    #bookscarousel-caption{
+      text-align: right;
+    }
+
+      #book{
+          margin-left: -200px;
+              
+        
+      }
+      #bookcap{
+          margin-top: 100px;
+      }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+            <!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+        <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+          <a class="navbar-brand" href="index.html">norse</a>
+        </div>
+        <div class="collapse navbar-collapse" id="#navigationbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html#HomePage">HOME</a></li>
+            <li><a href="index.html#history">HISTORY</a></li>
+            <li><a href="test/contact.php">CONTACT</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li><a href="merchandise1.html">Merchandise</a></li>
+            <li><a href="index.html#books">BOOKS</a></li>
+            <li><a href="media1.html">MEDIA</a></li>
+            </ul>
+            <li>
+          </ul>
+        </div>
+        </div>
+    </nav>
+    
+<!-- Carousel for books-->
+<div id="myCarouselforbooks" class="carousel slide" data-ride="carousel">
+      <!-- indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarouselforbooks" data-slide-to="0"class="active" ></li>
+      <li data-target="#myCarouselforbooks" data-slide-to="1" ></li>
+      <li data-target="#myCarouselforbooks" data-slide-to="2"></li>
+    </ol>
+
+
+<!-- Wrapper for slides -->
+    <div id="bookscarousel-inner" class="carousel-inner" role="listbox">
+      <div class="item active">
+
+      <a href="https://www.amazon.in/Norse-Mythology-Neil-Gaiman/dp/039360909X">
+        <img src="book1.jpg" alt="book1">
+      </a>
+        <div id="bookscarousel-caption" class="carousel-caption">
+          <h3>Norse Mythology</h3>
+          <p> Book by Neil Gaiman</p>
+        </div>
+      </div>
+
+      <div class="item">
+         <a href="https://www.amazon.in/Penguin-Book-Norse-Myths-Vikings/dp/0241982073">
+        <img src="book2.jpg" alt="book2">
+      </a>
+        <div id="bookscarousel-caption" class="carousel-caption">
+          <h3>Penguin book of the Norse myths</h3>
+          <p>Book by Kevin Crossley-Holland</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="https://www.amazon.in/Gospel-Loki-Runes-Novels/dp/147320237X">
+      
+        <img src="book3.jpg" alt="book3">
+      </a>
+        <div  id="bookscarousel-caption" class="carousel-caption">
+          <h3>The Gospel of Loki</h3>
+          <p>Novel by Joanne Harris</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarouselforbooks" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarouselforbooks" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+
+
+  <div class="w3-row">
+    <div  id="book"class="w3-col m6 w3-center w3-padding-large">
+      <img src="book7.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="250" height="350">
+    </div>
+    <div id="bookcap" class="w3-col m6 w3-hide-small w3-padding-large">
+      <p> Norse Gods</p>
+        <p>By (author): Johan Egerkrans </p>
+            <a href="https://grimfrost.com/products/norse-gods">
+    <button class="btn">get one for yourself</button>
+    </a>
+        
+    </div>
+  </div>
+  <br><br>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16"></div>
+    <br><br>
+    
+  <div class="w3-row">
+    <div  id="book"class="w3-col m6 w3-center w3-padding-large">
+      <img src="book8.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="250" height="350">
+    </div>
+    <div id="bookcap" class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>The Study Havamal: Original Old Norse </p>
+        <p>by Carrie Overton </p>
+            <a href="https://www.amazon.com/Study-Havamal-Original-English-Translations/dp/193757136X/ref=sr_1_2?s=books&ie=UTF8&qid=1538489353&sr=1-2&keywords=norse">
+    <button class="btn">get one for yourself</button>
+    </a>
+        
+    </div>
+  </div>
+    <br><br>
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16"></div>
+    <br><br>
+    
+      <div class="w3-row">
+    <div  id="book"class="w3-col m6 w3-center w3-padding-large">
+      <img src="book9.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="250" height="350">
+    </div>
+    <div id="bookcap" class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Bringing Ragnarok</p>
+        <p>by Andrew M. Tanner</p>
+                    <a href="https://www.amazon.com/Bringing-Ragnarok-Andrew-M-Tanner-ebook/dp/B07FJ6ZXLR">
+    <button class="btn">get one for yourself</button>
+    </a>
+        
+    </div>
+  </div>
+     <br><br>
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16"></div>
+   
+    </div>
+
+
+<!-- Footer -->
+
+<footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("b").toggle();
+    });
+});
+</script>
+
+
+<button class="btn">A project by TEIT</button>
+
+    <b><a href="https://twitter.com/acpce_org"> <img src="twitter.png" height="50px" width="50px"></a></b>
+   <b> <a href="https://www.facebook.com/acpce.org"> <img src="fb1.png" height="50px" width="50px"></a></b>
+    <b><a href="https://www.instagram.com/official.acpce"> <img src="insta.png" height="50px" width="50px"></a></b>
+   
+
+      </footer>  
+      <script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+</body>
+</html>
